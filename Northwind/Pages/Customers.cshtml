@@ -1,31 +1,57 @@
-﻿@page
+﻿@page  // Defines this file as a Razor Page that can handle HTTP requests directly
 @model CustomersModel  // Specifies the model type that provides data and functionality for this page
+
 @{
-    //This is a C# code block where server-side code be exectude
-   ViewData["Title"] = "Northwind Customers";  // Sets the page title in the ViewData dictionary
+    // This is a C# code block where server-side code can be executed
+    ViewData["Title"] = "Northwind Customers";  // Sets the page title in the ViewData dictionary
 }
+
 <!-- Outputs the title value as an H1 heading. The at symbol allows C# expressions to be evaluated and their results inserted into the HTML -->
+
 <h1>@ViewData["Title"]</h1>  
+
+
    <table class="table">
+
        <thead>
+
            <tr>
+
                <th>Customer ID</th>
+
                <th>Company Name</th>
+
                <th>Contact Name</th>
+
                <th>Country</th>
+
            </tr>
+
        </thead>
+
        <tbody>
+
            <!-- Loops through the resultset of customers and adds the information for
                 each customer to the table -->
+
            @foreach (var customer in Model.Customers)
+
            {
+
                <tr>
+
                    <td>@customer.CustomerID</td>
+
                    <td>@customer.CompanyName</td>
+
                    <td>@customer.ContactName</td>
+
                    <td>@customer.Country</td>
+
                </tr>
+
            }
+
        </tbody>
+
    </table>

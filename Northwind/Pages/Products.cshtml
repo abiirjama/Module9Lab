@@ -1,0 +1,32 @@
+﻿@page
+@model ProductsModel
+@{
+    // Sets the title that appears on the browser tab
+    ViewData["Title"] = "Northwind Products";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<!-- Bootstrap table styling -->
+<table class="table">
+    <thead>
+        <tr>
+            <!-- Table column headers -->
+            <th>Product Name</th>
+            <th>Category</th>
+            <th>Unit Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Loop through each product returned from the database -->
+        @foreach (var product in Model.Products)
+        {
+            <tr>
+                <!-- Output values to the table -->
+                <td>@product.ProductName</td>
+                <td>@product.CategoryName</td>
+                <td>@product.UnitPrice.ToString("C")</td> <!-- formats price as currency -->
+            </tr>
+        }
+    </tbody>
+</table>

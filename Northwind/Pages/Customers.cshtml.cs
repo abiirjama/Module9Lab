@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Mvc.RazorPages;
+ using Microsoft.AspNetCore.Mvc.RazorPages;
 
    using System.Collections.Generic;
 
@@ -85,5 +85,3 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
        public string Country { get; set; }
 
    }
-
- 
